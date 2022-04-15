@@ -28,7 +28,7 @@ function App() {
   if (timer === 0) {
     alert("Game over, Your Score is " + counter);
     setCounter(0);
-    setStartGame(false);
+    setTimer(60);
   }
 
   const handleClick = () => {
