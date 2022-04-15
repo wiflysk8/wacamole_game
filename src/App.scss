@@ -75,3 +75,11 @@ button:active {
 .c-red {
   color: red;
 }
+
+@media only screen and (max-device-width: 500px) {
+  .table {
+    background-color: red;
+    width: 60%;
+    height: 100%;
+  }
+}

@@ -8,3 +8,10 @@
   box-shadow: #029db9 2px -2px 12px;
   object-fit: contain;
 }
+
+@media only screen and (max-device-width: 500px) {
+  .c-square {
+    width: 80px;
+    height: 80px;
+  }
+}
