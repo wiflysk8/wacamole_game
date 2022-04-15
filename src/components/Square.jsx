@@ -19,7 +19,7 @@ const Square = ({ index, randomBox, counter, setCounter, timer }) => {
   };
 
   useEffect(() => {
-    if (index === randomBox && timer < 60) {
+    if (index === randomBox && timer < 30) {
       setMole(wacamoleImg);
     } else {
       setMole(defaultImg);

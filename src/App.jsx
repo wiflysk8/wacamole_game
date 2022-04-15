@@ -7,7 +7,7 @@ const squares = [0, 1, 2, 3, 4, 5, 6, 7, 8];
 function App() {
   const [counter, setCounter] = useState(0);
   const [random, setRandom] = useState(0);
-  const [timer, setTimer] = useState(60);
+  const [timer, setTimer] = useState(30);
   const [startGame, setStartGame] = useState(false);
 
   useEffect(() => {
@@ -23,7 +23,7 @@ function App() {
       if (newRandom !== random) {
         setRandom(newRandom);
       }
-    }, 400);
+    }, 350);
     return () => clearInterval(interval);
   });
 
@@ -39,7 +39,7 @@ function App() {
   return (
     <div className="App">
       <p className="c-score">
-        TIME: <span className={timer > 20 ? "c-green" : "c-red"}>{timer}</span>
+        TIME: <span className={timer > 10 ? "c-green" : "c-red"}>{timer}</span>
       </p>
       <div className="table">
         {squares.map((index) => (
@@ -49,7 +49,7 @@ function App() {
 
       <button onClick={handleClick}>START GAME</button>
       <p className="c-score">
-        SCORE: <span className={counter > 20 ? "c-green" : "c-red"}>{counter}</span>
+        SCORE: <span className={counter >= 20 ? "c-green" : "c-red"}>{counter}</span>
       </p>
     </div>
   );
