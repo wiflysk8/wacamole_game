@@ -48,7 +48,7 @@ function App() {
 
       <button onClick={handleClick}>START GAME</button>
       <p className="c-score">
-        SCORE: <span className={counter > 10 ? "c-green" : "c-red"}>{counter}</span>
+        SCORE: <span className={counter > 20 ? "c-green" : "c-red"}>{counter}</span>
       </p>
     </div>
   );
