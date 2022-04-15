@@ -26,7 +26,6 @@ function App() {
     }, 400);
     return () => clearInterval(interval);
   });
-  console.log(random);
 
   if (timer === 0) {
     alert("Game Over, your score is: " + counter);
