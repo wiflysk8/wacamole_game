@@ -48,7 +48,7 @@ function App() {
       </div>
       {startGame === false && (
         <button className="c-btn" onClick={handleClick}>
-          START
+          START GAME
         </button>
       )}
       <p className="c-score">
