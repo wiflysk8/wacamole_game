@@ -46,8 +46,11 @@ function App() {
           <Square key={index} index={index} randomBox={random} counter={counter} setCounter={setCounter} timer={timer} />
         ))}
       </div>
-
-      <button onClick={handleClick}>START GAME</button>
+      {startGame === false && (
+        <button className="c-btn" onClick={handleClick}>
+          START
+        </button>
+      )}
       <p className="c-score">
         SCORE: <span className={counter >= 20 ? "c-green" : "c-red"}>{counter}</span>
       </p>
