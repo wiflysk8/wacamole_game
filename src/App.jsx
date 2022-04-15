@@ -16,14 +16,17 @@ function App() {
       return () => clearInterval(inter);
     }
   }, [startGame, timer]);
-  console.log(timer);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setRandom(Math.floor(Math.random() * squares.length));
+      let newRandom = Math.floor(Math.random() * squares.length);
+      if (newRandom !== random) {
+        setRandom(newRandom);
+      }
     }, 400);
     return () => clearInterval(interval);
   });
+  console.log(random);
 
   if (timer === 0) {
     alert("Game Over, your score is: " + counter);
