@@ -23,8 +23,8 @@ function App() {
       let newRandom = Math.floor(Math.random() * squares.length);
       if (newRandom !== random) {
         setRandom(newRandom);
+        console.log(random);
       }
-      console.log(random);
     }, 350);
     return () => clearInterval(interval);
   });
@@ -35,6 +35,7 @@ function App() {
     }
     if (counter > highScore) {
       setHighScore(counter);
+      alert("New High Score: " + counter);
     }
     setCounter(0);
     setTimer(30);

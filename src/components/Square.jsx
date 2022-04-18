@@ -14,7 +14,7 @@ const Square = ({ index, randomBox, counter, setCounter, timer }) => {
       setClicked(true);
       setTimeout(() => {
         setClicked(false);
-      }, 400);
+      }, 650);
     }
   };
 
