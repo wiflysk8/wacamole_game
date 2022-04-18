@@ -9,6 +9,7 @@ function App() {
   const [random, setRandom] = useState(0);
   const [timer, setTimer] = useState(30);
   const [startGame, setStartGame] = useState(false);
+  const [highScore, setHighScore] = useState(0);
 
   useEffect(() => {
     if (startGame === true) {
@@ -23,13 +24,19 @@ function App() {
       if (newRandom !== random) {
         setRandom(newRandom);
       }
+      console.log(random);
     }, 350);
     return () => clearInterval(interval);
   });
 
   if (timer === 0) {
     alert("Game Over, your score is: " + counter);
-    window.location.reload();
+    if (counter > highScore) {
+      setHighScore(counter);
+    }
+    setCounter(0);
+    setTimer(30);
+    setStartGame(false);
   }
 
   const handleClick = () => {
@@ -52,7 +59,10 @@ function App() {
         </button>
       )}
       <p className="c-score">
-        SCORE: <span className={counter >= 20 ? "c-green" : "c-red"}>{counter}</span>
+        SCORE: <span className={counter >= 15 ? "c-green" : "c-red"}>{counter}</span>
+      </p>
+      <p>
+        HIGH SCORE: <span className={highScore >= 15 ? "c-green" : "c-red"}>{highScore}</span>
       </p>
     </div>
   );
