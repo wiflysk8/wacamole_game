@@ -30,7 +30,9 @@ function App() {
   });
 
   if (timer === 0) {
-    alert("Game Over, your score is: " + counter);
+    if (counter > 0) {
+      alert("Game Over, your score is: " + counter);
+    }
     if (counter > highScore) {
       setHighScore(counter);
     }
